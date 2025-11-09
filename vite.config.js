@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { RiTailwindCssFill } from 'react-icons/ri'
+import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), RiTailwindCssFill()],
+  plugins: [react(), tailwindcss()],
 })

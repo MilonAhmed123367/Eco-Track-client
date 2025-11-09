@@ -1,14 +1,22 @@
-import './App.css'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import MainLayout from "./layout/MainLayout";
+import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import DetailsPage from "./pages/DetailsPage";
+import NotFound from "./pages/NotFound";
 
-function App() {
-
+export default function App() {
   return (
-    <>
-      
-      <h1>Vite + React</h1>
-     
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="challenges/:id" element={<DetailsPage />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="register" element={<RegisterPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
+  );
 }
-
-export default App
